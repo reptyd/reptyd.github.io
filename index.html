@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlushZoo - онлайн магазин плюшевых игрушек</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav role="navigation" aria-label="Основная навигация">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#carousel-section">Игрушки</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+        <h1 class="site-title">PlushZoo</h1>
+        <div class="controls">
+            <label for="themeSelect">Тема:</label>
+            <select id="themeSelect" aria-label="Выбор темы">
+                <option value="light">Светлая</option>
+                <option value="dark">Тёмная</option>
+            </select>
+
+            <label for="langSelect">Язык:</label>
+            <select id="langSelect" aria-label="Выбор языка">
+                <option value="ru">RU</option>
+                <option value="en">EN</option>
+            </select>
+        </div>
+    </header>
+
+    <main role="main">
+        <section class="intro">
+            <h2>Добро пожаловать в PlushZoo!</h2>
+            <p>Лучшие <strong>плюшевые игрушки</strong> для всех возрастов. <em>Животные, растения, насекомые</em> и герои из любимых игр!</p>
+        </section>
+
+        <section class="carousel-section" id="carousel-section">
+            <h2>Познакомься с игрушкой</h2>
+            <div class="carousel-wrapper">
+                <div class="carousel" id="carousel">
+                    <div class="carousel-item post" data-title="Собачка">
+                        <img src="images/1.jpg" alt="Игрушка 1" class="carousel-image">
+                        <button class="ajax_add_to_cart">Добавить в корзину</button>
+                    </div>
+                    <div class="carousel-item post" data-title="Овечка">
+                        <img src="images/2.jpg" alt="Игрушка 2" class="carousel-image">
+                        <button class="ajax_add_to_cart">Добавить в корзину</button>
+                    </div>
+                    <div class="carousel-item post" data-title="Коровка">
+                        <img src="images/3.jpg" alt="Игрушка 3" class="carousel-image">
+                        <button class="ajax_add_to_cart">Добавить в корзину</button>
+                    </div>
+                    <div class="carousel-item post" data-title="Уточка">
+                        <img src="images/4.jpg" alt="Игрушка 4" class="carousel-image">
+                        <button class="ajax_add_to_cart">Добавить в корзину</button>
+                    </div>
+                    <div class="carousel-item post" data-title="Котик">
+                        <img src="images/5.jpg" alt="Игрушка 5" class="carousel-image">
+                        <button class="ajax_add_to_cart">Добавить в корзину</button>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button id="prevBtn" aria-label="Предыдущее изображение">&#9664;</button>
+                    <span id="carouselTitle">Собачка</span>
+                    <button id="nextBtn" aria-label="Следующее изображение">&#9654;</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section" id="about">
+            <h2>Познакомьтесь с нами ближе!</h2>
+            <video controls>
+                <source src="video/shop-tour.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </section>
+
+        <section class="features">
+            <h2>Наши преимущества</h2>
+            <ul>
+                <li>100% гипоаллергенные материалы</li>
+                <li>Бесплатная доставка от 2000₽</li>
+                <li>Возврат в течение 30 дней</li>
+            </ul>
+        </section>
+
+        <section class="specs" id="contacts">
+            <h2>Характеристики игрушек</h2>
+            <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Материал</th>
+                        <th>Размер</th>
+                        <th>Цена</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Медвежонок</td>
+                        <td>Плюш</td>
+                        <td>25 см</td>
+                        <td>900₽</td>
+                    </tr>
+                    <tr>
+                        <td>Котик</td>
+                        <td>Флис</td>
+                        <td>20 см</td>
+                        <td>750₽</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </section>
+        <a href="#" id="cartButton" aria-label="Открыть корзину">
+            <img src="images/cart-icon.svg" alt="Корзина" />
+        </a>
+        <!-- Модальное окно корзины -->
+        <div id="cartModal" class="modal">
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Закрыть окно">×</button>
+            <h2>Ваша корзина</h2>
+            <div class="cart-items">
+                <!-- Здесь динамически будут отображаться товары -->
+                <p>Корзина пуста.</p>
+            </div>
+            </div>
+        </div>
+  
+
+    </main>
+
+    
+
+    <footer>
+        <p>&copy; 2024 PlushZoo. Все права защищены.</p>
+        <p><a href="https://example.com/privacy" target="_blank">Политика конфиденциальности</a></p>
+    </footer>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="js/script.js"></script>
+    <div id="cart-punkt"></div>
+    <div id="cartModal" class="modal" style="display:none;">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Корзина</h2>
+          <div id="cartItems">
+            <p>Ваша корзина пуста.</p>
+          </div>
+          <hr>
+          <form id="orderForm">
+            <label>Имя (обязательно)<br><input type="text" required></label><br>
+            <label>Телефон (обязательно)<br><input type="tel" required></label><br>
+            <label>Адрес<br><input type="text"></label><br>
+            <label>Промо-код<br><input type="text"></label><br>
+            <div style="margin-top: 15px;">
+              <button type="submit">Заказать</button>
+              <button type="button" id="closeModal">Вернуться на сайт</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/shop_script.js"></script>
+</body>
+</html>
