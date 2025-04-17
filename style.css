@@ -20,14 +20,7 @@ header {
     flex-wrap: wrap;
 }
 
-.site-title {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-    font-size: 24px;
-    color: #4a90e2;
-}
+
 
 nav ul {
     list-style: none;
@@ -318,4 +311,40 @@ footer {
 
 .dark-mode .specs th {
     background-color: #2a2a2a;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;        /* чтобы в крайнем случае строки переносились */
+  padding: 0.5rem 1rem;
+}
+.nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+.site-title {
+  flex: 1;                /* занимает всё свободное пространство */
+  text-align: center;
+  white-space: nowrap;    /* не даёт заголовку «ломаться» */
+}
+@media (max-width: 600px) {
+  /* Навигация остаётся флексом, но для очень узких экранов можно */
+  /* делать кнопки чуть меньше и/или в столбик */
+  .nav-buttons button {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+.table-responsive {
+  overflow-x: auto;
+  /* Чтобы браузер понимал, что тут прокрутка */
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;        /* отступы сверху/снизу */
+}
+
+.table-responsive table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
 }
