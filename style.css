@@ -348,3 +348,65 @@ nav {
   max-width: 100%;
   border-collapse: collapse;
 }
+#cartButton {
+    position: fixed;   /* фиксируем относительно окна браузера */
+    bottom: 16px;      /* отступ от низа окна */
+    right: 16px;       /* отступ от правого края окна */
+    width: 48px;       /* размер по вашему вкусу */
+    height: 48px;
+    z-index: 1000;     /* выше всего остального контента */
+    cursor: pointer;
+  }
+  
+  #cartButton img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+/* контейнер модалки — по умолчанию скрыт */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+  }
+  
+  /* полупрозрачный фон */
+  .modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* сам контент модалки */
+  .modal-content {
+    position: relative;
+    background: #fff;
+    max-width: 90%;
+    width: 400px;
+    margin: 8% auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+  
+  /* кнопка закрытия */
+  .modal-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* класс для показа модалки */
+  .modal.active {
+    display: block;
+  }
+  
