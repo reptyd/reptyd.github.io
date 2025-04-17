@@ -119,6 +119,22 @@
             </table>
             </div>
         </section>
+        <a href="#" id="cartButton" aria-label="Открыть корзину">
+            <img src="images/cart-icon.svg" alt="Корзина" />
+        </a>
+        <!-- Модальное окно корзины -->
+        <div id="cartModal" class="modal">
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Закрыть окно">×</button>
+            <h2>Ваша корзина</h2>
+            <div class="cart-items">
+                <!-- Здесь динамически будут отображаться товары -->
+                <p>Корзина пуста.</p>
+            </div>
+            </div>
+        </div>
+  
 
     </main>
 
@@ -157,6 +173,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
+    <script src="shop_script.js"></script>
 </body>
 </html>
