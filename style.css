@@ -409,4 +409,98 @@ nav {
   .modal.active {
     display: block;
   }
-  
+ /* ——— Красивое модальное окно ——— */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active .modal-overlay {
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 480px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-30px);
+    opacity: 0;
+    animation: slideDown 0.4s forwards;
+}
+
+@keyframes slideDown {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #000;
+}
+
+/* ——— Стили для таблицы корзины ——— */
+.cart-items table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-items th,
+.cart-items td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-items th {
+    font-weight: 600;
+    background-color: #f9f9f9;
+}
+
+.cart-items tr:last-child td {
+    border-bottom: none;
+}
+
+/* Адаптив */
+@media (max-width: 400px) {
+    .modal-content {
+        padding: 20px;
+    }
+    .modal-close {
+        font-size: 20px;
+    }
+}
