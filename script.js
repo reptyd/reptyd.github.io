@@ -12,20 +12,28 @@ window.addEventListener('load', () => {
         en: {
             welcome: 'Welcome to PlushZoo!',
             introText: 'The best plush toys for all ages. Animals, plants, insects, and game characters!',
-            popularToys: 'Popular toys',
-            moreDetails: 'More details',
-            aboutUs: 'About Us',
+            toys: 'Meet the toy',
+            aboutUs: 'Get to know us better!',
+            advantages: 'Our Advantages',
+            specs: 'Toy Specifications',
+            main: 'Home',
+            toysNav: 'Toys',
+            aboutNav: 'About Us',
             contacts: 'Contacts',
-            main: 'Home'
+            cart: 'Cart'
         },
         ru: {
             welcome: 'Добро пожаловать в PlushZoo!',
             introText: 'Лучшие плюшевые игрушки для всех возрастов. Животные, растения, насекомые и герои из любимых игр!',
-            popularToys: 'Популярные игрушки',
-            moreDetails: 'Подробнее',
-            aboutUs: 'О нас',
+            toys: 'Познакомься с игрушкой',
+            aboutUs: 'Познакомьтесь с нами ближе!',
+            advantages: 'Наши преимущества',
+            specs: 'Характеристики игрушек',
+            main: 'Главная',
+            toysNav: 'Игрушки',
+            aboutNav: 'О нас',
             contacts: 'Контакты',
-            main: 'Главная'
+            cart: 'Корзина'
         }
     };
 
@@ -34,25 +42,18 @@ window.addEventListener('load', () => {
 
         document.querySelector('.intro h2').textContent = lang.welcome;
         document.querySelector('.intro p').textContent = lang.introText;
-        document.querySelector('.catalog h2').textContent = lang.popularToys;
-
-        document.querySelectorAll('.product-card button').forEach(btn => {
-            btn.textContent = lang.moreDetails;
-        });
+        document.querySelector('.carousel-section h2').textContent = lang.toys;
+        document.querySelector('.video-section h2').textContent = lang.aboutUs;
+        document.querySelector('.features h2').textContent = lang.advantages;
+        document.querySelector('.specs h2').textContent = lang.specs;
 
         const navLinks = document.querySelectorAll('nav ul li a');
         navLinks[0].textContent = lang.main;
-        navLinks[1].textContent = lang.popularToys;
-        navLinks[2].textContent = lang.aboutUs;
+        navLinks[1].textContent = lang.toysNav;
+        navLinks[2].textContent = lang.aboutNav;
         navLinks[3].textContent = lang.contacts;
-    });
 
-    // Tilt эффект
-    VanillaTilt.init(document.querySelectorAll(".product-card"), {
-        max: 15,
-        speed: 400,
-        glare: true,
-        "max-glare": 0.5
+        document.querySelector('#cart-punkt').textContent = lang.cart;
     });
 
     // Анимации появления
@@ -67,7 +68,7 @@ window.addEventListener('load', () => {
     }, { threshold: 0.1 });
     fadeElements.forEach(el => observer.observe(el));
 
-    // Карусель (5 изображений)
+    // Карусель
     const carousel = document.getElementById('carousel');
     const carouselItems = document.querySelectorAll('.carousel-item');
     const titleSpan = document.getElementById('carouselTitle');
@@ -95,7 +96,7 @@ window.addEventListener('load', () => {
     window.addEventListener('resize', updateCarousel);
     updateCarousel();
 
-    // Привязка звуков по индексу
+    // Привязка звуков по клику на изображение
     carouselItems.forEach((item, i) => {
         const img = item.querySelector('img');
         img.addEventListener('click', () => {
@@ -105,4 +106,5 @@ window.addEventListener('load', () => {
             });
         });
     });
+    
 });
