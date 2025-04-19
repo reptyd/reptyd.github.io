@@ -504,3 +504,17 @@ nav {
         font-size: 20px;
     }
 }
+/* Корзина: плавный переход фильтра */
+#cartButton img {
+    transition: filter 0.3s ease;
+}
+
+/* Для светлой темы — без фильтра */
+body:not(.dark-mode) #cartButton img {
+    filter: none;
+}
+
+/* Для тёмной темы — инверсия */
+.dark-mode #cartButton img {
+    filter: invert(1) brightness(1.2);
+}
