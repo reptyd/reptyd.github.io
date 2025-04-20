@@ -134,43 +134,34 @@
             </div>
             </div>
         </div>
+        <!-- Второе модальное окно: форма доставки -->
+        <div id="deliveryModal" class="modal">
+            <div class="modal-content">
+            <span id="deliveryClose" class="modal-close">&times;</span>
+            <h2>Данные для доставки</h2>
+            <form id="deliveryForm">
+                <label>
+                Имя и фамилия:<br>
+                <input type="text" name="fullname" required>
+                </label><br><br>
+                <label>
+                Адрес доставки:<br>
+                <input type="text" name="address" required>
+                </label><br><br>
+                <label>
+                Телефон:<br>
+                <input type="tel" name="phone" required>
+                </label><br><br>
+                <button type="submit" id="doneBtn">Готово</button>
+            </form>
+            </div>
+        </div>
   
-
     </main>
-
-    
-
     <footer>
         <p>&copy; 2024 PlushZoo. Все права защищены.</p>
         <p><a href="https://example.com/privacy" target="_blank">Политика конфиденциальности</a></p>
     </footer>
-
-    
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
-    <script src="js/script.js"></script>
-    <div id="cart-punkt"></div>
-    <div id="cartModal" class="modal" style="display:none;">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2>Корзина</h2>
-          <div id="cartItems">
-            <p>Ваша корзина пуста.</p>
-          </div>
-          <hr>
-          <form id="orderForm">
-            <label>Имя (обязательно)<br><input type="text" required></label><br>
-            <label>Телефон (обязательно)<br><input type="tel" required></label><br>
-            <label>Адрес<br><input type="text"></label><br>
-            <label>Промо-код<br><input type="text"></label><br>
-            <div style="margin-top: 15px;">
-              <button type="submit">Заказать</button>
-              <button type="button" id="closeModal">Вернуться на сайт</button>
-            </div>
-          </form>
-        </div>
-      </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/script.js"></script>
