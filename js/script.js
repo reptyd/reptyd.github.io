@@ -1,3 +1,4 @@
+
 window.addEventListener('load', () => {
     // Переключение темы
     const themeSelect = document.getElementById('themeSelect');
