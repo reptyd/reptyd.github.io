@@ -40,7 +40,7 @@ nav ul li a {
 nav ul li a:hover {
     color: #007bff;
 }
-
+/*Языки и тема*/
 .controls {
     display: flex;
     gap: 10px;
@@ -67,7 +67,7 @@ nav ul li a:hover {
     border-color: #4a90e2;
     box-shadow: 0 0 4px rgba(74, 144, 226, 0.5);
 }
-
+/* конец тем и языков */
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -84,56 +84,13 @@ section {
     transform: translateY(30px);
     transition: all 0.6s ease-out;
 }
-
+/* появление убывание */
 section.fade-in {
     opacity: 1;
     transform: translateY(0);
 }
 
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.product-card {
-    flex: 0 0 auto;
-    width: 250px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    background-color: #fefefe;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.carousel-controls {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    gap: 10px;
-}
-
-.carousel-controls button {
-    padding: 8px 12px;
-    font-size: 18px;
-    background-color: #4a90e2;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.carousel-controls button:hover {
-    background-color: #357ab8;
-}
-
+/*все кнопки и их цвета*/
 button {
     cursor: pointer;
     padding: 8px 14px;
@@ -194,34 +151,7 @@ footer {
     background-color: #9b59b6;
 }
 
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 10px;
-    }
 
-    nav ul {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .controls {
-        justify-content: center;
-    }
-
-    .products {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .product-card {
-        width: 200px;
-    }
-
-    .carousel-wrapper {
-        max-width: 90%;
-    }
-}
 
 /* Карусель изображений */
 .carousel-section h2 {
@@ -272,20 +202,7 @@ footer {
     object-fit: contain;
     border-radius: 10px;
 }
-
-.features, .specs {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.features ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
+/* Таблица цен и размеров */
 .specs table {
     width: 100%;
     border-collapse: collapse;
@@ -312,35 +229,17 @@ footer {
 .dark-mode .specs th {
     background-color: #2a2a2a;
 }
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;        /* чтобы в крайнем случае строки переносились */
-  padding: 0.5rem 1rem;
-}
-.nav-buttons {
-  display: flex;
-  gap: 0.5rem;
-}
+
 .site-title {
   flex: 1;                /* занимает всё свободное пространство */
   text-align: center;
-  white-space: nowrap;    /* не даёт заголовку «ломаться» */
+  white-space: nowrap;
 }
-@media (max-width: 600px) {
-  /* Навигация остаётся флексом, но для очень узких экранов можно */
-  /* делать кнопки чуть меньше и/или в столбик */
-  .nav-buttons button {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.9rem;
-  }
-}
+
 .table-responsive {
   overflow-x: auto;
-  /* Чтобы браузер понимал, что тут прокрутка */
   -webkit-overflow-scrolling: touch;
-  margin: 1rem 0;        /* отступы сверху/снизу */
+  margin: 1rem 0;
 }
 
 .table-responsive table {
@@ -518,3 +417,192 @@ body:not(.dark-mode) #cartButton img {
 .dark-mode #cartButton img {
     filter: invert(1) brightness(1.2);
 }
+/* ——— Упрощённые круглые кнопки + и – в модалке корзины ——— */
+#cartModal .cart-items button {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    transform: none !important; /* глушим глобальный hover‑сдвиг */
+  }
+  
+  #cartModal .cart-items button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  #cartModal .cart-items button:active {
+    background-color: #d0d0d0;
+  }
+/* ——— Упрощённые круглые кнопки + и – в модалке корзины ——— */
+#cartModal .cart-items button {
+    /* фиксированный размер круга */
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    /* нежный фон и спокойный текст */
+    background-color: #f0f0f0;
+    color: #333;
+    /* убираем тень, бордер‑радиус делает круг */
+    border: none;
+    border-radius: 50%;
+    /* центрируем символ */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* плавное изменение фона без подъёма */
+    transition: background-color 0.2s;
+    transform: none !important; /* глушим глобальный hover‑сдвиг */
+  }
+  
+  #cartModal .cart-items button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  #cartModal .cart-items button:active {
+    background-color: #d0d0d0;
+  }
+/* Стиль для кнопки оформления */
+#cartModal .cart-actions #checkoutBtn {
+  padding: 8px 16px;
+  background-color: #607d8b;   /* спокойный серый‑голубой */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#cartModal .cart-actions #checkoutBtn:hover {
+  background-color: #546e7a;
+}
+/* Кнопка «Далее» (максимально близко к таблице) */
+.cart-next-btn{
+  float:right;
+  margin:-10px 0 4px 0;   /* −2 px сверху прижимает кнопку «вплотную» */
+  padding:8px 18px;
+  background:#4a90e2;
+  color:#fff;
+
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
+  transition:background .25s;
+}
+.cart-next-btn:hover{background:#357ab8;}
+
+.dark-mode .cart-next-btn{background:#bb86fc;}
+.dark-mode .cart-next-btn:hover{background:#9b59b6;}
+.cart-next-btn {
+    border-radius: 0 !important;    /* квадратные углы */
+    padding: 12px 18px !important;  /* чуть большие отступы */
+    font-size: 18px !important;     /* чуть больший шрифт */
+    min-width: 80px;                /* задаём минимальную ширину */
+    min-height: 36px;               /* минимальную высоту */
+    cursor: pointer;                /* чтобы курсор стал “рукой” */
+  }
+/* ─── Более закруглённые углы для стрелок карусели и кнопки “Далее” ─── */
+.carousel-controls button,
+.cart-next-btn {
+  border-radius: 16px !important;  /* увеличиваем скругление */
+  transition: border-radius 0.2s;   /* плавный переход при наведении */
+}
+/* Убедитесь, что deliveryModal скрыт по умолчанию */
+#deliveryModal {
+    display: none;
+  }
+  #deliveryModal.active {
+    display: block;
+  }
+  
+  /* Подгонка размера / позиционирования */
+  #deliveryModal .modal-content {
+    max-width: 400px;
+  }
+  #deliveryModal .modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 500px;               
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    padding: 30px 24px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Кнопка закрытия */
+  #deliveryModal .modal-close {
+    position: absolute;
+    top: 16px; 
+    right: 16px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  #deliveryModal .modal-close:hover {
+    color: #333;
+  }
+  
+  /* Заголовок */
+  #deliveryModal h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  /* Форма и поля */
+  #deliveryModal form {
+    display: flex;
+    flex-direction: column;
+  }
+  #deliveryModal form label {
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  #deliveryModal form input[type="text"],
+  #deliveryModal form input[type="tel"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  #deliveryModal form input:focus {
+    border-color: #66afe9;
+    box-shadow: 0 0 4px rgba(102, 175, 233, 0.5);
+    outline: none;
+  }
+  
+  /* Кнопка “Готово” */
+  #deliveryModal #doneBtn {
+    margin-top: 20px;
+    align-self: center;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+  }
+  #deliveryModal #doneBtn:hover {
+    background-color: #218838;
+  }
+  #deliveryModal #doneBtn:active {
+    transform: scale(0.98);
+  }  
