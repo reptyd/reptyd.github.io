@@ -172,12 +172,6 @@ footer {
     width: 100%;
 }
 
-.carousel-image {
-    min-width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
 .carousel-controls {
     display: flex;
     justify-content: space-between;
@@ -262,26 +256,6 @@ footer {
     height: 100%;
     display: block;
   }
-/* контейнер модалки — по умолчанию скрыт */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2000;
-  }
-  
-  /* полупрозрачный фон */
-  .modal-overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-  }
-  
-  /* сам контент модалки */
   .modal-content {
     position: relative;
     background: #fff;
@@ -417,22 +391,7 @@ body:not(.dark-mode) #cartButton img {
 .dark-mode #cartButton img {
     filter: invert(1) brightness(1.2);
 }
-/* ——— Упрощённые круглые кнопки + и – в модалке корзины ——— */
-#cartModal .cart-items button {
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    background-color: #f0f0f0;
-    color: #333;
-    border: none;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s;
-    transform: none !important; /* глушим глобальный hover‑сдвиг */
-  }
-  
+/* ——— Упрощённые круглые кнопки + и – в модалке корзины ——— */  
   #cartModal .cart-items button:hover {
     background-color: #e0e0e0;
   }
@@ -606,3 +565,14 @@ body:not(.dark-mode) #cartButton img {
   #deliveryModal #doneBtn:active {
     transform: scale(0.98);
   }  
+  .modal {
+    display: none;                  /* скрыто по умолчанию */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    justify-content: center;        /* центрируем по X/Y */
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);  /* тёмный полупрозрачный фон */
+    z-index: 1000;
+  }
+.intro-title      { font-size: 2.2rem; font-weight: 700; }   /* приветствие */
+.features-title   { font-size: 2.0rem; font-weight: 700; }   /* «Наши преимущества» */
